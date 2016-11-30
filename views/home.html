@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="mtg">
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-controller="MtgSearchController">
+	<div ng-repeat="card in cards.cards">
+		<h1>{{card.name}}</h1>
+		<img src="{{card.imageUrl}}" />
+	</div>
+	<script type="text/javascript" src="/angular/angular.js"></script>
+	<script type="text/javascript" src="/assets/js/angular-main.js"></script>
+	<script type="text/javascript" src="/assets/js/controllers/mtg-search-controller.js"></script>
+</body>
+</html>
