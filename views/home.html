@@ -7,10 +7,22 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-controller="MtgSearchController">
-	<div ng-repeat="card in cards.cards">
-		<h1>{{card.name}}</h1>
-		<img src="{{card.imageUrl}}" />
+
+	<div class="row">
+		<div class="col-md-12">
+			<form>
+				<input ng-model="filtro" class="form-control" placeholder="Pesquisar" />
+			</form>
+		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-2" ng-repeat="card in cards.cards | filter: filtro">
+			{{card.name}}
+			<img src="{{card.imageUrl}}" />
+		</div>		
+	</div>
+
+
 	<script type="text/javascript" src="/angular/angular.js"></script>
 	<script type="text/javascript" src="/assets/js/angular-main.js"></script>
 	<script type="text/javascript" src="/assets/js/controllers/mtg-search-controller.js"></script>
